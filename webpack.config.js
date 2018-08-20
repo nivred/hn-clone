@@ -1,8 +1,9 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const environment = process.env.NODE_ENV || "development";
 
 module.exports = {
   entry: ["./src/index.js"],
-  mode: "development", // TODO: figure this out from an environment variable.
+  mode: environment,
   module: {
     rules: [
       { test: /\.js$/, loader: "babel-loader", exclude: /node_modules/ },
